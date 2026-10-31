@@ -1,0 +1,127 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Default deny catch-all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() > 0 && id.size() <= 128;
+    }
+
+    // User Profile Document
+    match /users/{userId} {
+      allow get: if isOwner(userId);
+      allow list: if false;
+      allow create: if isOwner(userId) && isValidId(userId);
+      allow update: if isOwner(userId);
+      allow delete: if false;
+
+      // Weekly Commitments subcollection
+      match /commitments/{commitmentId} {
+        allow get, list: if isOwner(userId);
+        allow create, update: if isOwner(userId) && isValidId(commitmentId);
+        allow delete: if isOwner(userId);
+      }
+
+      // Rest Periods subcollection
+      match /restPeriods/{restPeriodId} {
+        allow get, list: if isOwner(userId);
+        allow create, update: if isOwner(userId) && isValidId(restPeriodId);
+        allow delete: if isOwner(userId);
+      }
+
+      // Interests subcollection
+      match /interests/{interestId} {
+        allow get, list: if isOwner(userId);
+        allow create, update: if isOwner(userId) && isValidId(interestId);
+        allow delete: if isOwner(userId);
+      }
+
+      // Ambitions subcollection
+      match /ambitions/{ambitionId} {
+        allow get, list: if isOwner(userId);
+        allow create, update: if isOwner(userId) && isValidId(ambitionId);
+        allow delete: if isOwner(userId);
+      }
+
+      // Goals subcollection
+      match /goals/{goalId} {
+        allow get, list: if isOwner(userId);
+        allow create, update: if isOwner(userId) && isValidId(goalId);
+        allow delete: if isOwner(userId);
+
+        // Milestones
+        match /milestones/{milestoneId} {
+          allow get, list: if isOwner(userId);
+          allow create, update: if isOwner(userId) && isValidId(milestoneId);
+          allow delete: if isOwner(userId);
+        }
+      }
+
+      // Settings subcollection (motivation, preferences, etc.)
+      match /settings/{settingId} {
+        allow get, list: if isOwner(userId);
+        allow create, update: if isOwner(userId) && isValidId(settingId);
+        allow delete: if isOwner(userId);
+      }
+
+      // Calendar Events subcollection (prepared for Step 2)
+      match /events/{eventId} {
+        allow get, list: if isOwner(userId);
+        allow create, update: if isOwner(userId) && isValidId(eventId);
+        allow delete: if isOwner(userId);
+      }
+
+      // Blurt Entries subcollection (prepared for Step 3)
+      match /blurtEntries/{entryId} {
+        allow get, list: if isOwner(userId);
+        allow create, update: if isOwner(userId) && isValidId(entryId);
+        allow delete: if isOwner(userId);
+      }
+
+      // Ideas subcollection (prepared for Step 3)
+      match /ideas/{ideaId} {
+        allow get, list: if isOwner(userId);
+        allow create, update: if isOwner(userId) && isValidId(ideaId);
+        allow delete: if isOwner(userId);
+      }
+
+      // Pathways & Opportunities (prepared for Step 5)
+      match /pathways/{pathwayId} {
+        allow get, list: if isOwner(userId);
+        allow create, update: if isOwner(userId) && isValidId(pathwayId);
+        allow delete: if isOwner(userId);
+      }
+
+      match /opportunities/{opportunityId} {
+        allow get, list: if isOwner(userId);
+        allow create, update: if isOwner(userId) && isValidId(opportunityId);
+        allow delete: if isOwner(userId);
+      }
+
+      match /portfolio/{entryId} {
+        allow get, list: if isOwner(userId);
+        allow create, update: if isOwner(userId) && isValidId(entryId);
+        allow delete: if isOwner(userId);
+      }
+
+      match /checkIns/{checkInId} {
+        allow get, list: if isOwner(userId);
+        allow create, update: if isOwner(userId) && isValidId(checkInId);
+        allow delete: if isOwner(userId);
+      }
+    }
+  }
+}

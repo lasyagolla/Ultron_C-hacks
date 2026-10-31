@@ -1,0 +1,6 @@
+{
+  "name": "Bloom - Personal Growth & Well-being",
+  "description": "An AI-powered personal growth and well-being companion for students, balancing academics, ambitions, and protected rest.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

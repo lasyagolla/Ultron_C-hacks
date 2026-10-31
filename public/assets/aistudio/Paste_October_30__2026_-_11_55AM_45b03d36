@@ -1,0 +1,1815 @@
+# BUILD STEP 1 OF 6: COMPLETE APPLICATION FOUNDATION
+
+## IMPORTANT: READ THE ENTIRE SPECIFICATION BEFORE WRITING CODE
+
+You are an expert full-stack development team consisting of a senior software engineer, product architect, UI/UX designer, motion designer, database architect, accessibility specialist, and quality assurance engineer.
+
+Your task is to begin building a sophisticated AI-powered student productivity, personal growth, and well-being web application called **[APP NAME]**.
+
+This is the FIRST development stage of a six-stage project.
+
+You must understand the entire application before implementing its foundation.
+
+**DO NOT attempt to implement every advanced feature in this first stage.**
+
+Instead, create a beautiful, production-oriented, fully responsive, persistent, and technically well-structured foundation that will support every future feature without requiring a redesign.
+
+The application must be a REAL WORKING WEB APPLICATION, not a landing page or static mockup.\
+
+
+### STEP 1 MUST DELIVER
+
+1. Complete application layout and design system.
+2. All primary pages and functional navigation.
+3. Beautiful, personalised homepage.
+4. Bloom's visual identity and interactive assistant interface foundation.
+5. Fully functional sign-up and sign-in.
+6. Complete multi-step onboarding.
+7. Seven-day recurring schedule input.
+8. Protected rest-period configuration.
+9. Editable profile and essential settings.
+10. Persistent storage and shared data architecture.
+11. Four functional appearance themes.
+12. Animation and accessibility preferences.
+13. Responsive desktop, tablet, and mobile layouts.
+14. Reliable loading, error, empty, and success states.
+15. A verified foundation ready for subsequent development stages.
+
+All implemented features must work and persist.
+
+Do not replace missing functionality with decorative interactions.
+
+---
+
+# PART A — UNDERSTAND THE COMPLETE PRODUCT
+
+## 1. APPLICATION PURPOSE
+
+[APP NAME] is an AI-powered personal growth and well-being companion designed primarily for students.
+
+It helps students organise academic commitments, extracurricular activities, hobbies, ambitions, ideas, projects, and personal responsibilities while protecting their time and well-being.
+
+The application supports **United Nations Sustainable Development Goal 3: Good Health and Well-being, particularly Target 3.4**, through sustainable planning, protected rest, workload awareness, and supportive personal development.
+
+Its central philosophy is:
+
+**Progress should adapt to the student's life, rather than forcing the student to adapt to unrealistic productivity expectations.**
+
+The application must feel:
+
+- Calm.
+- Intelligent.
+- Personalised.
+- Sophisticated.
+- Supportive.
+- Organised.
+- Visually exceptional.
+- Never guilt-inducing or pressuring.
+
+Avoid aggressive productivity language, streak-shaming, or messages that imply users must constantly accomplish more.
+
+---
+
+# 2. THE COMPLETE APPLICATION ECOSYSTEM
+
+The finished application consists of three interconnected pillars.
+
+## PILLAR ONE — GOAL TRACKER
+
+A sophisticated Google Calendar-inspired scheduling and goal-management system.
+
+It will eventually include:
+
+- Monthly, weekly, and daily calendar views.
+- Recurring commitments.
+- Event creation and editing.
+- Goals and milestones.
+- AI scheduling.
+- Morning planning.
+- Evening reflections.
+- Mood and energy check-ins.
+- Rebuild My Day.
+- Exam/Focus Mode.
+- Friction Detector.
+- Life Inbox.
+- Protected rest.
+- Progress analytics.
+
+## PILLAR TWO — BLURT
+
+An immersive AI-powered thought organisation environment.
+
+It will eventually include:
+
+- Voice and text input.
+- A voice-responsive glowing orb.
+- AI-generated thought categories.
+- Animated threads connecting thoughts to category bubbles.
+- Expandable thought summaries.
+- Ambition Simulator.
+- Idea Bin.
+- Private Vault.
+- Approved transfers of goals and interests to other features.
+
+## PILLAR THREE — EXPLORE
+
+A personalised learning, opportunity, and project-development environment.
+
+It will eventually include:
+
+- Interactive Personal Growth Map.
+- Skill Pathway Generator.
+- Opportunity Radar.
+- Resource Discovery.
+- Skill Gap Detector.
+- Idea Launchpad.
+- Connections to Goal Tracker, Blurt, and Portfolio.
+
+## ACHIEVEMENT PORTFOLIO
+
+A dedicated environment for recording:
+
+- Awards.
+- Certifications.
+- Competitions.
+- Projects.
+- Skills.
+- Courses.
+- Extracurricular activities.
+- Volunteering.
+- Personal achievements.
+
+## BLOOM — THE AI PERSONAL GUIDE
+
+Bloom is the unified, context-aware assistant that connects the entire application.
+
+Bloom will eventually:
+
+- Understand the user's approved personal context.
+- Suggest realistic scheduling adjustments.
+- Recognise potentially overloaded schedules.
+- Support well-being-aware planning.
+- Organise ambitions.
+- Recommend relevant learning opportunities.
+- Suggest appropriate next steps.
+- Explain the reasoning behind recommendations.
+
+Bloom is not a separate, disconnected chatbot.
+
+## MOTIVATION TINDER
+
+A personalised AI-generated motivational card system.
+
+Important future interaction:
+
+**SWIPE RIGHT = LIKE.**
+
+**SWIPE LEFT = DISMISS.**
+
+The system will learn user preferences over time.
+
+---
+
+# 3. CRITICAL ARCHITECTURAL PRINCIPLE
+
+The application must follow:
+
+**ONE USER → ONE SHARED PERSONAL CONTEXT → THREE CONNECTED EXPERIENCES.**
+
+This principle must be established during Step 1.
+
+Do not create separate, unrelated databases for each pillar.
+
+Do not create isolated user profiles for Goal Tracker, Blurt, and Explore.
+
+All features must eventually operate through the same permission-aware personal context.
+
+For example:
+
+If a user expresses an ambition in Blurt, approves it, and later creates a learning pathway in Explore, Goal Tracker must be able to schedule related tasks using that same information.
+
+The user must not need to repeatedly enter their interests, schedule, or goals.
+
+### IMPORTANT
+
+Private Vault data is the deliberate exception.
+
+It must remain separate from AI processing and shared personal context.
+
+Do not create actual Private Vault functionality in Step 1.
+
+However, design the architecture so that a genuinely encrypted, isolated vault can be implemented in a later stage.
+
+---
+
+# PART B — TECHNICAL FOUNDATION
+
+## 4. TECHNOLOGY REQUIREMENTS
+
+Build a modern, maintainable, full-stack web application.
+
+Prefer the following technologies when supported by Google AI Studio:
+
+### Frontend
+
+- React.
+- TypeScript.
+- Tailwind CSS.
+- Motion for React or an equivalent supported animation library.
+- Accessible component primitives.
+- Responsive layouts.
+
+### Backend and persistence
+
+Use a supported persistent database and authentication solution.
+
+If Firebase integration is available, prefer:
+
+- Firebase Authentication.
+- Cloud Firestore.
+- Appropriate security rules.
+
+Use another suitable supported backend if necessary.
+
+### AI
+
+Prepare the application architecture for Gemini integration.
+
+Do not expose Gemini API keys in client-side code.
+
+AI functionality should use secure server-side calls where supported.
+
+### IMPORTANT IMPLEMENTATION RULE
+
+Do not create a fake authentication system.
+
+Do not store passwords in localStorage.
+
+Do not treat a browser-only profile as a securely authenticated account.
+
+If proper authentication cannot be configured automatically, implement the supported infrastructure and clearly explain the configuration needed.
+
+---
+
+# 5. SHARED DATA ARCHITECTURE
+
+Design the database structure BEFORE building the interface.
+
+Create or prepare typed models and storage services for the following entities.
+
+### User Profile
+
+Fields:
+
+- User ID.
+- Display name.
+- Email.
+- Created date.
+- Updated date.
+- Onboarding completion status.
+- Time zone.
+- Appearance preference.
+- Animation preference.
+
+### AI Consent
+
+Fields:
+
+- User ID.
+- Consent status.
+- Consent timestamp.
+- Policy version.
+- Optional personalisation settings.
+
+### Interests
+
+Fields:
+
+- Unique ID.
+- User ID.
+- Interest name.
+- Category.
+- Source.
+- Created date.
+
+### Ambitions
+
+Fields:
+
+- Unique ID.
+- User ID.
+- Ambition title.
+- Description.
+- Priority.
+- Status.
+- Created date.
+
+### Skills
+
+Fields:
+
+- Unique ID.
+- User ID.
+- Skill name.
+- Self-reported experience level.
+- Created date.
+
+### Weekly Commitments
+
+Fields:
+
+- Unique ID.
+- User ID.
+- Activity title.
+- Category.
+- Start time.
+- End time.
+- Selected weekdays.
+- Fixed or flexible status.
+- Recurrence details.
+- Notes.
+- Created date.
+- Updated date.
+
+### Protected Rest Periods
+
+Fields:
+
+- Unique ID.
+- User ID.
+- Rest type.
+- Start time.
+- End time.
+- Selected weekdays.
+- Protection status.
+
+### Goals
+
+Prepare fields for:
+
+- Goal ID.
+- User ID.
+- Title.
+- Description.
+- Category.
+- Priority.
+- Difficulty.
+- Target date.
+- Estimated effort.
+- Status.
+- Progress.
+- Linked interests.
+
+### Milestones
+
+Prepare fields for:
+
+- Milestone ID.
+- Goal ID.
+- Title.
+- Description.
+- Status.
+- Completion date.
+
+### Calendar Events
+
+Prepare fields for:
+
+- Event ID.
+- User ID.
+- Title.
+- Category.
+- Start date and time.
+- End date and time.
+- Recurrence.
+- Fixed/flexible status.
+- Linked goal.
+- Linked milestone.
+- Reminder preferences.
+
+### Blurt Entries
+
+Prepare fields for:
+
+- Entry ID.
+- User ID.
+- Original text.
+- Created date.
+- Approved AI categories.
+- Approved summary.
+- Linked interests.
+- Linked goals.
+
+### Idea Bin
+
+Prepare fields for:
+
+- Idea ID.
+- User ID.
+- Title.
+- Description.
+- Stage.
+- Tags.
+- Notes.
+- Linked goals.
+- Linked Explore investigations.
+
+### Explore Learning Pathways
+
+Prepare fields for:
+
+- Pathway ID.
+- User ID.
+- Skill or interest.
+- Experience level.
+- Learning objective.
+- Estimated duration.
+- Stages.
+- Progress.
+- Linked goals.
+
+### Saved Opportunities and Resources
+
+Prepare fields for:
+
+- Unique ID.
+- User ID.
+- Title.
+- Category.
+- Source.
+- Relevant interest.
+- Saved date.
+- Status.
+
+### Portfolio
+
+Prepare fields for:
+
+- Entry ID.
+- User ID.
+- Title.
+- Category.
+- Description.
+- Date.
+- Skills.
+- Supporting links.
+- Linked goals.
+- Linked pathways.
+
+### Well-being Check-ins
+
+Prepare fields for:
+
+- Check-in ID.
+- User ID.
+- Date.
+- Time.
+- Self-reported mood.
+- Self-reported energy.
+- Optional reflection.
+
+### Motivation Preferences
+
+Prepare fields for:
+
+- User ID.
+- Preferred tone.
+- Preferred length.
+- Liked cards.
+- Dismissed cards.
+- Saved favourites.
+
+### AI Suggestions
+
+Prepare fields for:
+
+- Suggestion ID.
+- User ID.
+- Suggestion type.
+- Explanation.
+- Proposed action.
+- Approval status.
+- Created date.
+
+### Notification Preferences
+
+Prepare fields for:
+
+- User ID.
+- Enabled reminder types.
+- Quiet hours.
+- Frequency preferences.
+
+### Data architecture requirements
+
+Use stable identifiers.
+
+Keep user records separated.
+
+Use appropriate database security rules.
+
+Use reusable typed services for reading and writing data.
+
+Avoid duplicated records and disconnected local state.
+
+Do not send Private Vault content into general AI context.
+
+Do not create unencrypted vault content storage as part of this stage.
+
+Create only the necessary database collections now; additional collections can be created when their features are implemented.
+
+The purpose is to establish a reliable shared schema and service architecture without prematurely building all advanced features.\
+
+
+---
+
+# PART C — COMPLETE VISUAL DESIGN SYSTEM
+
+## 6. DESIGN DIRECTION
+
+Create a premium, minimalist interface inspired by sophisticated modern productivity and wellness applications.
+
+The application should feel elegant, calm, futuristic, and exceptionally polished.
+
+Avoid:
+
+- Overwhelming dashboards.
+- Childish illustrations.
+- Excessive emojis.
+- Aggressive gradients.
+- Harsh shadows.
+- Unnecessary decorative elements.
+- Dense layouts.
+- Inconsistent typography.
+- Generic template styling.
+
+Prioritise:
+
+- Soft rounded cards.
+- Gentle shadows.
+- Subtle gradients.
+- Spacious layouts.
+- Elegant typography.
+- Minimalist icons.
+- Carefully balanced colours.
+- Fluid animations.
+- Clear information hierarchy.
+
+---
+
+# 7. THEME SYSTEM
+
+Implement a central theme system using reusable design tokens or CSS variables.
+
+Do not hardcode colours throughout individual components.
+
+## THEME 1 — SOFT FOCUS
+
+This is the default appearance.
+
+Colours:
+
+Background: `#F8F9F5`
+
+Primary forest green: `#344E41`
+
+Sage green: `#A3B8A0`
+
+Dusty blue: `#A8C5D1`
+
+White cards: `#FFFFFF`
+
+Primary text: `#29352F`
+
+Pale mint: `#E5EFE7`
+
+Use warm ivory backgrounds with white cards and restrained green and blue accents.
+
+The interface must not appear overwhelmingly green.
+
+## THEME 2 — MIDNIGHT
+
+A sophisticated dark monochrome theme.
+
+Use:
+
+- Near-black backgrounds.
+- Charcoal cards.
+- White text.
+- Soft-grey secondary text.
+- Subtle monochrome borders.
+- Gentle white or grey glow effects.
+
+## THEME 3 — MINIMAL
+
+A clean black-and-white theme.
+
+Use:
+
+- White backgrounds.
+- Black text.
+- Light-grey cards.
+- Minimal shadows.
+- Monochrome icons.
+
+## THEME 4 — FOLLOW SYSTEM
+
+Automatically adapt to the user's device appearance settings.
+
+All components must respond correctly.
+
+### Theme requirements
+
+Users must be able to switch themes instantly.
+
+The selected theme must persist after refresh and sign-in.
+
+Every page, modal, form, navigation component, orb, and card must adapt.
+
+---
+
+# 8. TYPOGRAPHY
+
+Use a sophisticated, highly readable sans-serif font.
+
+Create a consistent hierarchy for:
+
+- Main page headings.
+- Section headings.
+- Card titles.
+- Body text.
+- Supporting text.
+- Buttons.
+- Labels.
+
+Use comfortable font sizes.
+
+Avoid tiny text.
+
+Ensure sufficient contrast.
+
+---
+
+# 9. ANIMATION SYSTEM
+
+Animations should feel smooth, soft, and premium.
+
+Use appropriate easing and transitions.
+
+Avoid overly dramatic effects.
+
+Implement:
+
+- Smooth page transitions.
+- Elegant card entrance animations.
+- Subtle hover states.
+- Gentle button interactions.
+- Modal transitions.
+- Soft orb animation.
+- Smooth navigation changes.
+- Loading skeletons.
+- Success feedback.
+- Error feedback.
+
+### Animation settings
+
+Implement:
+
+- Full Animations.
+- Reduced Motion.
+- Animations Off.
+
+Respect device accessibility preferences.
+
+The application must remain fully usable without animations.
+
+---
+
+# PART D — COMPLETE PAGE LAYOUTS
+
+## 10. APPLICATION NAVIGATION
+
+Create the following pages:
+
+1. Home.
+2. Goal Tracker.
+3. Blurt.
+4. Explore.
+5. Portfolio.
+6. Insights.
+7. Settings.
+
+Every navigation item must open its correct page.
+
+Do not create broken routes.
+
+### Desktop navigation
+
+Use a premium vertical sidebar.
+
+Include:
+
+- Application logo.
+- Application name.
+- Navigation icons.
+- Navigation labels.
+- Active page indicator.
+- Settings access.
+- User profile section.
+
+The sidebar may be collapsible.
+
+### Mobile navigation
+
+Use a polished bottom navigation system.
+
+Keep primary destinations easy to access.
+
+Place secondary destinations in an accessible menu if needed.
+
+### Tablet
+
+Adapt the layout appropriately.
+
+Avoid simply shrinking desktop components.
+
+---
+
+# 11. PAGE IMPLEMENTATION RULE FOR STEP 1
+
+All seven pages must exist and have their final visual foundations.
+
+However, advanced functionality will be implemented in later stages.
+
+During Step 1:
+
+- Build complete layouts.
+- Build reusable components.
+- Implement navigation.
+- Establish data connections.
+- Display real available user information.
+- Provide meaningful empty states.
+
+Do not invent AI results.
+
+Do not display fake achievements.
+
+Do not populate the user's calendar with fabricated commitments.
+
+Do not create buttons that pretend to perform unavailable advanced actions.
+
+Where a feature has not yet been implemented, use a clear internal development-state explanation rather than pretending it works.
+
+These are temporary implementation states, not permanent product features.
+
+---
+
+# PART E — THE HOMEPAGE
+
+## 12. HOMEPAGE DESIGN
+
+The homepage is one of the most important visual elements of the entire application.
+
+It must immediately communicate sophistication, calmness, and personalisation.
+
+### Overall layout
+
+Use a spacious, elegant dashboard.
+
+The homepage should contain:
+
+1. Personalised greeting.
+2. Central Bloom orb.
+3. Three surrounding pillar circles.
+4. Today's schedule preview.
+5. Upcoming commitments.
+6. Daily priorities.
+7. Compact progress preview.
+8. Motivation Card preview.
+9. Quick actions.
+
+Do not overcrowd the screen.
+
+---
+
+# 13. PERSONALISED GREETING
+
+Display a greeting based on the user's local time.
+
+Examples:
+
+“Good morning, Alex.”
+
+“Good afternoon, Alex.”
+
+“Good evening, Alex.”
+
+Below the greeting, display a short, calm supporting message.
+
+During Step 1, use simple contextual text based on real available profile and schedule information.
+
+Do not pretend that advanced Bloom AI analysis is already operational.
+
+---
+
+# 14. CENTRAL BLOOM ORB
+
+Create a beautifully animated, softly glowing orb.
+
+It should appear to float gently.
+
+Use subtle movement, breathing-like expansion, and restrained light effects.
+
+Avoid flashing or excessive motion.
+
+The orb represents Bloom, the unified AI Personal Guide.
+
+### Interaction
+
+Clicking the orb opens a polished assistant panel.
+
+During Step 1, the panel should provide a welcoming explanation of Bloom and the application's main features.
+
+Do not pretend that advanced AI recommendations are already implemented.
+
+Build the panel component so that real Gemini-powered conversations and proactive suggestions can be added later without redesigning the interface.
+
+---
+
+# 15. THREE INTERCONNECTED PILLAR CIRCLES
+
+Arrange three smaller interactive circular elements around the central orb.
+
+Label them:
+
+- Goal Tracker.
+- Blurt.
+- Explore.
+
+Use subtle animated lines or visual connections.
+
+The arrangement should communicate that the three pillars share one intelligence system.
+
+Clicking a circle must navigate to its page.
+
+### Mobile behaviour
+
+Adapt the arrangement for smaller screens.
+
+Do not allow circles to overlap.
+
+Do not make navigation dependent on animation.
+
+---
+
+# 16. TODAY'S SCHEDULE PREVIEW
+
+Create a compact, elegant schedule card.
+
+Display:
+
+- Current date.
+- Today's recurring commitments.
+- Start and end times.
+- Category.
+- Next upcoming commitment.
+
+Use the actual schedule entered during onboarding.
+
+If no commitments exist, display a helpful empty state.
+
+Do not fabricate events.
+
+### Interaction
+
+Clicking the schedule card opens Goal Tracker.
+
+During Step 1, the card must correctly read and display saved recurring commitments.
+
+Full calendar functionality will be implemented in Step 2.
+
+---
+
+# 17. DAILY PRIORITIES CARD
+
+Create a visually consistent card for daily priorities.
+
+During Step 1, display saved initial goals where available.
+
+If none exist, show a calm empty state.
+
+Include a navigation action to Goal Tracker.
+
+Do not pretend that automatic AI task prioritisation is operational.
+
+---
+
+# 18. MOTIVATION CARD PREVIEW
+
+Create a small, beautifully designed motivational card on the homepage.
+
+The final application will support:
+
+- AI-generated motivational messages.
+- Swipe RIGHT to Like.
+- Swipe LEFT to Dismiss.
+- Preference learning.
+- Saved favourites.
+- Continuous content generation.
+
+During Step 1:
+
+- Build the reusable visual card component.
+- Establish the relevant preference data model.
+- Create a polished layout.
+- Avoid claiming that adaptive generation is already implemented.
+
+Do not store fake preference history.
+
+---
+
+# 19. QUICK ACTIONS
+
+Provide elegant quick-action buttons for:
+
+- Open Goal Tracker.
+- Open Blurt.
+- Explore interests.
+- View Insights.
+
+These buttons must navigate correctly.
+
+Do not create nonfunctional action buttons.
+
+---
+
+# PART F — ACCOUNT CREATION AND SIGN-IN
+
+## 20. AUTHENTICATION SCREENS
+
+Create beautiful sign-up and sign-in interfaces consistent with the application's design system.
+
+The screens should feel welcoming, premium, and uncluttered.
+
+### Sign-up
+
+Collect:
+
+- Display name.
+- Email.
+- Password, if supported by the authentication provider.
+- Password confirmation, where appropriate.
+
+Provide validation.
+
+### Sign-in
+
+Collect:
+
+- Email.
+- Password.
+
+Provide clear error messages.
+
+### Account functionality
+
+Implement:
+
+- Account creation.
+- Sign-in.
+- Sign-out.
+- Persistent authenticated sessions.
+- Password recovery where supported.
+- Appropriate protected routes.
+
+Do not expose private user information to other accounts.
+
+### Visual requirements
+
+Use:
+
+- Rounded form fields.
+- Clear labels.
+- Elegant buttons.
+- Gentle transitions.
+- Accessible validation messages.
+- Soft background gradients.
+
+Avoid unnecessarily complicated authentication screens.
+
+---
+
+# PART G — COMPLETE MULTI-STEP ONBOARDING
+
+## 21. ONBOARDING DESIGN
+
+The onboarding process should feel like a thoughtful conversation.
+
+Use a clean, centred layout with:
+
+- Progress indicator.
+- Step title.
+- Short explanation.
+- Interactive inputs.
+- Back button.
+- Continue button.
+- Smooth transitions.
+
+Save completed steps where supported.
+
+Users should be able to review and correct previous answers.
+
+Do not overwhelm users with too many fields on one screen.
+
+---
+
+# 22. ONBOARDING STEP 1 — WELCOME
+
+Display a warm welcome.
+
+Suggested heading:
+
+“Let's make room for what matters.”
+
+Supporting text:
+
+“Tell us a little about your life, and we'll help you build plans that actually fit.”
+
+Explain briefly that the application connects scheduling, personal ambitions, learning, and well-being.
+
+Provide a Continue button.
+
+---
+
+# 23. ONBOARDING STEP 2 — AI CONSENT
+
+Display a clear explanation of AI-powered personalisation.
+
+Suggested heading:
+
+“Your information, your choice.”
+
+Explain:
+
+“This application uses AI to analyse information you choose to share outside your Private Vault. This helps personalise your goals, schedules, recommendations, and well-being-aware suggestions.”
+
+Include:
+
+“This application supports personal well-being but is not therapy, medical advice, or a substitute for professional support.”
+
+Provide an unchecked consent checkbox.
+
+Explain:
+
+- What information may be processed.
+- Why AI processing is used.
+- That an external AI provider may process relevant information.
+- How consent can be withdrawn.
+- How stored information can be reviewed or deleted.
+
+Do not claim data is never transmitted externally if Gemini will process it.
+
+Store consent status and timestamp.
+
+Do not submit personal information for AI analysis without appropriate consent.
+
+Provide an appropriate non-AI experience or explain which later features require consent.
+
+Account creation and basic planning should not require unnecessary AI processing.
+
+---
+
+# 24. ONBOARDING STEP 3 — PERSONAL PROFILE
+
+Ask:
+
+“What should we call you?”
+
+“What would you like help with?”
+
+Provide selectable categories:
+
+- Academics.
+- Time management.
+- Extracurricular activities.
+- Personal goals.
+- Learning new skills.
+- Creative projects.
+- Building better routines.
+- Managing overwhelming schedules.
+- Exploring future ambitions.
+
+Allow multiple selections.
+
+Allow custom responses.
+
+Save information to the user profile.
+
+---
+
+# 25. ONBOARDING STEP 4 — INTERESTS AND AMBITIONS
+
+Ask:
+
+“What are you interested in?”
+
+“What would you like to achieve?”
+
+Allow users to enter multiple interests and ambitions.
+
+Examples:
+
+- Finance.
+- Entrepreneurship.
+- Guitar.
+- Dance.
+- Coding.
+- Competitions.
+- Creative projects.
+
+These are examples only.
+
+Do not automatically save example interests to a real user's profile.
+
+Provide removable selection chips.
+
+Allow custom entries.
+
+Save interests and ambitions as structured records.
+
+---
+
+# 26. ONBOARDING STEP 5 — MOTIVATION PREFERENCES
+
+Ask:
+
+“What kind of encouragement works best for you?”
+
+Provide options:
+
+- Gentle and reassuring.
+- Direct and practical.
+- Reflective and thoughtful.
+- Energetic and ambitious.
+- Short and minimal.
+- Balanced.
+
+Allow users to select one or more preferences.
+
+Ask whether they prefer:
+
+- Short messages.
+- Medium-length messages.
+- Longer reflections.
+
+Save these preferences.
+
+Explain that motivation will adapt to future feedback.
+
+---
+
+# 27. ONBOARDING STEP 6 — SEVEN-DAY WEEKLY SCHEDULE
+
+THIS IS THE MOST IMPORTANT ONBOARDING COMPONENT.
+
+Create a beautiful, fully functional recurring timetable editor.
+
+The interface must support all seven days:
+
+Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday.
+
+### Each commitment must include
+
+- Activity name.
+- Category.
+- Start time.
+- End time.
+- Selected days.
+- Fixed or flexible status.
+- Optional notes.
+
+### Categories
+
+Include:
+
+- School.
+- Tuition.
+- Extracurricular activity.
+- Hobby.
+- Personal commitment.
+- Other.
+
+### Required interactions
+
+Users must be able to:
+
+1. Add a commitment.
+2. Edit a commitment.
+3. Delete a commitment.
+4. Duplicate a commitment.
+5. Apply a commitment to multiple weekdays.
+6. Copy one day's schedule to other days.
+7. Mark a day as having no fixed commitments.
+8. View all seven days.
+9. Identify overlapping commitments.
+10. Review the timetable before saving.
+
+### Example
+
+A user might enter:
+
+School:
+
+Monday–Friday, 7:00 AM–4:00 PM.
+
+Maths Tuition:
+
+Monday, Wednesday, Friday, 5:00 PM–6:00 PM.
+
+Dance:
+
+Saturday, 10:00 AM–11:30 AM.
+
+These are examples only.
+
+Do not prepopulate real user schedules.
+
+### Fixed versus flexible
+
+Explain the difference clearly.
+
+**Fixed:** An activity that cannot normally be moved, such as school.
+
+**Flexible:** An activity that may be rescheduled with approval.
+
+### Scheduling validation
+
+Prevent invalid time ranges.
+
+Identify overlapping commitments.
+
+Display understandable conflict warnings.
+
+Handle activities that cross midnight correctly.
+
+Use the user's time zone consistently.
+
+### Persistence
+
+Save every confirmed commitment to persistent storage.
+
+The homepage must immediately display the correct commitments for the current day.
+
+The schedule must remain available after refresh.
+
+### Settings integration
+
+Users must be able to edit the same recurring schedule later through:
+
+**Settings → My Weekly Schedule**
+
+Do not create a separate, disconnected schedule editor for Settings.
+
+Reuse the same component and data services.
+
+---
+
+# 28. ONBOARDING STEP 7 — REST PREFERENCES
+
+Ask:
+
+“When would you like to protect time for yourself?”
+
+Allow users to configure:
+
+- Sleep periods.
+- Meal periods.
+- Breaks.
+- Other protected personal time.
+
+Allow recurring days and start/end times.
+
+Make these preferences editable.
+
+Do not impose a universal schedule.
+
+Explain that Bloom will avoid scheduling activities over protected rest periods unless the user explicitly approves an exception.
+
+Save protected rest blocks as structured records.
+
+---
+
+# 29. ONBOARDING STEP 8 — INITIAL GOALS
+
+Ask:
+
+“What would you like to work towards?”
+
+Allow users to enter optional goals.
+
+Each goal can include:
+
+- Title.
+- Category.
+- Priority.
+- Difficulty.
+- Target date.
+- Estimated weekly effort.
+
+Keep the interface simple.
+
+Users should be able to skip this step.
+
+Save goals using the shared goal model.
+
+These goals should appear in the homepage priorities preview where appropriate.
+
+Advanced milestone creation will be implemented in Step 2.
+
+---
+
+# 30. ONBOARDING STEP 9 — APPEARANCE
+
+Allow users to select:
+
+- Soft Focus.
+- Midnight.
+- Minimal.
+- Follow System.
+
+Also allow:
+
+- Full Animations.
+- Reduced Motion.
+- Animations Off.
+
+Show small theme previews.
+
+Apply changes immediately.
+
+Save preferences.
+
+---
+
+# 31. ONBOARDING STEP 10 — FINAL REVIEW
+
+Display a concise summary containing:
+
+- Profile.
+- Interests.
+- Ambitions.
+- Motivation preferences.
+- Weekly schedule.
+- Protected rest periods.
+- Initial goals.
+- Appearance settings.
+
+Allow editing.
+
+Provide a final button:
+
+“Enter My Space”
+
+When selected:
+
+- Save onboarding completion status.
+- Preserve all entered information.
+- Open the personalised homepage.
+- Display the user's real schedule and profile information.
+
+Do not show onboarding again after completion unless the user deliberately chooses to revisit it.
+
+---
+
+# PART H — ESSENTIAL SETTINGS
+
+## 32. SETTINGS PAGE
+
+Build a polished Settings interface.
+
+During Step 1, the following must genuinely work:
+
+### Profile
+
+- View display name.
+- Edit display name.
+- View account email.
+- Manage supported account settings.
+
+### My Weekly Schedule
+
+- View recurring commitments.
+- Add commitments.
+- Edit commitments.
+- Delete commitments.
+- Modify recurring days.
+
+Reuse the onboarding timetable editor.
+
+### Interests and Ambitions
+
+- Add interests.
+- Remove interests.
+- Edit ambitions.
+
+### Rest Preferences
+
+- Add rest blocks.
+- Edit rest blocks.
+- Delete rest blocks.
+
+### Appearance
+
+- Switch themes.
+- Save preferences.
+
+### Animations
+
+- Full.
+- Reduced.
+- Off.
+
+### AI Consent
+
+- View consent status.
+- Withdraw optional consent.
+- Review the application's data-processing explanation.
+
+### Account
+
+- Sign out.
+- Access account-management functionality supported by the authentication provider.
+
+### Future settings architecture
+
+Prepare the structure for:
+
+- AI memory management.
+- Notification preferences.
+- Motivation history.
+- Bloom Quiet Mode.
+- Advanced privacy controls.
+
+Do not claim these advanced controls are fully functional until their underlying systems are implemented.
+
+---
+
+# PART I — OTHER PAGE FOUNDATIONS
+
+## 33. GOAL TRACKER PAGE
+
+Create the visual foundation of the calendar interface.
+
+Include:
+
+- Page heading.
+- Month/Week/Day view controls.
+- Calendar container.
+- Sidebar or panel for goals.
+- Event category design.
+- Responsive layout.
+
+During Step 1, display the user's actual saved recurring commitments and initial goals where supported.
+
+Do not invent events.
+
+The full calendar interaction system will be developed in Step 2.
+
+---
+
+# 34. BLURT PAGE
+
+Create a visually exceptional Blurt landing interface.
+
+Include:
+
+- Central glowing orb.
+- “What's on your mind?” prompt.
+- Speak button.
+- Type button.
+- Space for future thought-thread visualisation.
+- Idea Bin navigation.
+- Private Vault navigation foundation.
+
+During Step 1, establish the interface and animation architecture.
+
+Do not pretend that Gemini thought analysis is implemented.
+
+Do not collect confidential Private Vault entries before encryption is properly implemented.
+
+The complete Blurt experience will be developed in Step 3.
+
+---
+
+# 35. EXPLORE PAGE
+
+Create a sophisticated Explore page foundation.
+
+Include:
+
+- Personal Growth Map area.
+- Skill Pathways section.
+- Opportunity Radar section.
+- Resource Discovery section.
+- Skill Gap Detector section.
+- Idea Launchpad section.
+
+Use real saved interests where available.
+
+Do not invent opportunities, achievements, or learning progress.
+
+The full AI-powered Explore system will be developed in Step 5.
+
+---
+
+# 36. PORTFOLIO PAGE
+
+Create a professional portfolio layout.
+
+Include sections for:
+
+- Awards.
+- Competitions.
+- Certifications.
+- Courses.
+- Projects.
+- Skills.
+- Volunteering.
+- Extracurricular activities.
+
+Provide an elegant empty state.
+
+Do not fabricate achievements.
+
+The complete Portfolio functionality will be developed in Step 5.
+
+---
+
+# 37. INSIGHTS PAGE
+
+Create a polished Insights layout.
+
+Prepare sections for:
+
+- Goal progress.
+- Task completion.
+- Workload trends.
+- Mood and energy trends.
+- Friction Detector.
+
+Do not populate charts with fake personal statistics.
+
+Use meaningful empty states until real data is available.
+
+Advanced insights will be implemented in Step 4.
+
+---
+
+# PART J — RESPONSIVE DESIGN AND ACCESSIBILITY
+
+## 38. RESPONSIVE REQUIREMENTS
+
+The application must work on:
+
+- Desktop.
+- Laptop.
+- Tablet.
+- Mobile.
+
+### Desktop
+
+Use spacious layouts and elegant navigation.
+
+### Tablet
+
+Adapt grids and navigation.
+
+### Mobile
+
+Use touch-friendly controls.
+
+Avoid horizontal overflow.
+
+Ensure forms remain comfortable to complete.
+
+The weekly schedule editor must remain usable on small screens.
+
+The Bloom orb and surrounding pillar circles must adapt without overlapping.
+
+---
+
+# 39. ACCESSIBILITY
+
+Implement:
+
+- Semantic HTML.
+- Keyboard navigation.
+- Visible focus indicators.
+- Accessible labels.
+- Sufficient contrast.
+- Reduced-motion support.
+- Accessible form validation.
+- Touch-friendly buttons.
+- Alternatives to drag-and-drop interactions.
+
+Do not communicate essential information using colour alone.
+
+---
+
+# PART K — FUNCTIONAL VERIFICATION
+
+## 40. TEST STEP 1 THOROUGHLY
+
+Before reporting completion, verify the following.
+
+### Authentication
+
+- Account creation works.
+- Sign-in works.
+- Sign-out works.
+- Session persistence works.
+- Protected routes behave correctly.
+
+### Onboarding
+
+- Every step can be completed.
+- Back and Next work.
+- Input validation works.
+- Entered information is preserved.
+- Consent is recorded.
+- Onboarding completion status persists.
+
+### Weekly Schedule
+
+- Commitments can be added.
+- Commitments can be edited.
+- Commitments can be deleted.
+- Multiple weekdays can be selected.
+- Overlapping commitments are identified.
+- Commitments persist after refresh.
+- The homepage displays the correct current-day commitments.
+
+### Rest Preferences
+
+- Rest blocks can be created.
+- Rest blocks can be edited.
+- Rest blocks persist.
+
+### Profile
+
+- Display name can be edited.
+- Interests can be added and removed.
+- Ambitions can be edited.
+
+### Appearance
+
+- All four themes work.
+- Theme selection persists.
+- Every page adapts.
+
+### Navigation
+
+- All seven pages open correctly.
+- The homepage pillar circles navigate correctly.
+- Mobile navigation works.
+
+### Homepage
+
+- Personalised greeting uses saved information.
+- Today's schedule uses actual commitments.
+- Empty states are appropriate.
+- Bloom orb opens its assistant panel.
+- Quick actions navigate correctly.
+
+### Data Integrity
+
+- One user's records cannot be accessed by another account.
+- Refreshing does not erase saved information.
+- Updating a schedule in Settings updates the homepage.
+- Updating a profile changes the greeting.
+- The same shared data services are used across relevant pages.
+
+### Accessibility
+
+- Keyboard navigation works.
+- Reduced-motion settings work.
+- Forms have accessible labels.
+- Mobile layouts are usable.
+
+Fix any identified errors before moving to the next development stage.
+
+---
+
+# PART L — INSTRUCTIONS FOR FUTURE DEVELOPMENT
+
+## 41. PRESERVE THE APPLICATION ARCHITECTURE
+
+This application will be developed through six stages.
+
+### Stage 1 — Current Stage
+
+Foundation, design, pages, homepage, account creation, onboarding, recurring schedule, essential settings, and shared data architecture.
+
+### Stage 2
+
+Complete Goal Tracker, calendar, goals, milestones, scheduling, and homepage mini-feature functionality.
+
+### Stage 3
+
+Complete Blurt, voice input, AI thought organisation, animated threads, Ambition Simulator, Idea Bin, and Private Vault.
+
+### Stage 4
+
+Complete Bloom, well-being-aware planning, reflections, Friction Detector, Rebuild My Day, and advanced insights.
+
+### Stage 5
+
+Complete Explore, learning pathways, opportunity discovery, Idea Launchpad, Personal Growth Map, and Portfolio.
+
+### Stage 6
+
+Complete advanced Settings, notification controls, AI memory management, final cross-feature integration, accessibility refinements, and comprehensive testing.
+
+### CRITICAL RULE FOR EVERY FUTURE STAGE
+
+Preserve the existing codebase, design system, data models, navigation, and working functionality.
+
+Do not recreate the application from scratch.
+
+Do not replace functioning components unnecessarily.
+
+Do not silently delete previously implemented features.
+
+Do not break previously completed workflows.
+
+Every new stage must extend the existing application.
+
+---
+
+# 42. FINAL STEP 1 DELIVERABLE
+
+At the end of this build stage, I expect to open a beautiful, functional web application.
+
+I should be able to:
+
+1. Create an account.
+2. Sign in.
+3. Complete a polished onboarding experience.
+4. Enter my real seven-day weekly schedule.
+5. Configure protected rest periods.
+6. Enter my interests and ambitions.
+7. Choose motivation preferences.
+8. Add initial goals.
+9. Select my preferred theme.
+10. Enter a personalised homepage.
+11. See my actual schedule displayed.
+12. Navigate between all major application pages.
+13. Interact with Bloom's visual assistant interface.
+14. Edit my schedule through Settings.
+15. Edit my profile and interests.
+16. Switch themes.
+17. Refresh the application without losing saved information.
+18. Use the application comfortably on desktop and mobile.
+
+The visual design must already feel like the final product.
+
+The technical architecture must already support the complete application.
+
+However, advanced features scheduled for later stages must not be falsely presented as operational.
+
+Do not invent user data.
+
+Do not create fake AI recommendations.
+
+Do not claim secure features exist before implementing them.
+
+---
+
+# 43. BEGIN IMPLEMENTATION
+
+Start by designing the application's shared data architecture and design system.
+
+Then implement authentication, onboarding, recurring schedule management, homepage, navigation, page foundations, essential settings, and persistence.
+
+Build reusable components and services.
+
+Ensure the application is responsive and accessible.
+
+Test the completed functionality.
+
+Do not attempt to implement all six development stages in this generation.
+
+**IMPLEMENT STEP 1 COMPLETELY AND CORRECTLY.**
+
+After building, provide a concise report covering:
+
+- Features successfully implemented.
+- Authentication and persistence configuration.
+- Components and data models created.
+- Tests performed.
+- Any missing external configuration.
+- Any limitations that must be addressed before Step 2.
+
+The goal is to establish a beautiful, reliable, genuinely functional foundation for the complete AI-powered personal growth and well-being application.
+
+BEGIN STEP 1 NOW.

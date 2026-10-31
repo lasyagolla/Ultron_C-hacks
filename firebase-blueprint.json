@@ -1,0 +1,330 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile, configuration, and onboarding state",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "The UID matching Firebase Auth"
+        },
+        "displayName": {
+          "type": "string",
+          "maxLength": 100,
+          "description": "User's display or chosen name"
+        },
+        "email": {
+          "type": "string",
+          "maxLength": 150,
+          "description": "User account email"
+        },
+        "onboardingCompleted": {
+          "type": "boolean",
+          "description": "Whether onboarding has been completed"
+        },
+        "timezone": {
+          "type": "string",
+          "maxLength": 64,
+          "description": "User timezone identifier"
+        },
+        "appearance": {
+          "type": "string",
+          "enum": ["soft-focus", "midnight", "minimal", "system"],
+          "description": "Preferred visual theme"
+        },
+        "animationPreference": {
+          "type": "string",
+          "enum": ["full", "reduced", "off"],
+          "description": "Animation level preference"
+        },
+        "helpCategories": {
+          "type": "array",
+          "description": "Selected support areas"
+        },
+        "aiConsent": {
+          "type": "boolean",
+          "description": "AI personalization consent status"
+        },
+        "aiConsentTimestamp": {
+          "type": "string",
+          "description": "Timestamp of AI consent agreement"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Account creation timestamp"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Account update timestamp"
+        }
+      },
+      "required": ["userId", "displayName", "email", "onboardingCompleted"]
+    },
+    "WeeklyCommitment": {
+      "title": "WeeklyCommitment",
+      "description": "Recurring weekly schedule activity",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "userId": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "title": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "category": {
+          "type": "string",
+          "enum": ["school", "tuition", "extracurricular", "hobby", "personal", "other"]
+        },
+        "startTime": {
+          "type": "string",
+          "pattern": "^[0-2][0-9]:[0-5][0-9]$"
+        },
+        "endTime": {
+          "type": "string",
+          "pattern": "^[0-2][0-9]:[0-5][0-9]$"
+        },
+        "days": {
+          "type": "array",
+          "description": "Days of week: monday, tuesday, etc."
+        },
+        "isFixed": {
+          "type": "boolean",
+          "description": "Fixed vs flexible commitment"
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 500
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        }
+      },
+      "required": ["id", "userId", "title", "category", "startTime", "endTime", "days", "isFixed"]
+    },
+    "RestPeriod": {
+      "title": "RestPeriod",
+      "description": "Protected personal rest, sleep, or meal block",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "userId": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "restType": {
+          "type": "string",
+          "enum": ["sleep", "meal", "break", "personal"]
+        },
+        "label": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "startTime": {
+          "type": "string",
+          "pattern": "^[0-2][0-9]:[0-5][0-9]$"
+        },
+        "endTime": {
+          "type": "string",
+          "pattern": "^[0-2][0-9]:[0-5][0-9]$"
+        },
+        "days": {
+          "type": "array"
+        },
+        "isProtected": {
+          "type": "boolean"
+        }
+      },
+      "required": ["id", "userId", "restType", "startTime", "endTime", "days", "isProtected"]
+    },
+    "Interest": {
+      "title": "Interest",
+      "description": "Student interest or passion area",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "userId": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "name": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "category": {
+          "type": "string",
+          "maxLength": 50
+        },
+        "source": {
+          "type": "string",
+          "maxLength": 50
+        },
+        "createdAt": {
+          "type": "string"
+        }
+      },
+      "required": ["id", "userId", "name"]
+    },
+    "Ambition": {
+      "title": "Ambition",
+      "description": "Student ambition or high-level aspiration",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "userId": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "title": {
+          "type": "string",
+          "maxLength": 140
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 500
+        },
+        "priority": {
+          "type": "string",
+          "enum": ["low", "medium", "high"]
+        },
+        "status": {
+          "type": "string",
+          "enum": ["active", "exploring", "achieved", "paused"]
+        },
+        "createdAt": {
+          "type": "string"
+        }
+      },
+      "required": ["id", "userId", "title"]
+    },
+    "Goal": {
+      "title": "Goal",
+      "description": "Actionable goal with target and estimated effort",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "userId": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "title": {
+          "type": "string",
+          "maxLength": 140
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 500
+        },
+        "category": {
+          "type": "string",
+          "maxLength": 60
+        },
+        "priority": {
+          "type": "string",
+          "enum": ["low", "medium", "high"]
+        },
+        "difficulty": {
+          "type": "string",
+          "enum": ["easy", "moderate", "challenging"]
+        },
+        "targetDate": {
+          "type": "string"
+        },
+        "estimatedEffort": {
+          "type": "string",
+          "maxLength": 60
+        },
+        "status": {
+          "type": "string",
+          "enum": ["not_started", "in_progress", "completed", "paused"]
+        },
+        "progress": {
+          "type": "number"
+        },
+        "createdAt": {
+          "type": "string"
+        }
+      },
+      "required": ["id", "userId", "title"]
+    },
+    "MotivationPreference": {
+      "title": "MotivationPreference",
+      "description": "Student preferences for tone and length of motivational cards",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "preferredTones": {
+          "type": "array"
+        },
+        "preferredLength": {
+          "type": "string",
+          "enum": ["short", "medium", "long"]
+        },
+        "likedCards": {
+          "type": "array"
+        },
+        "dismissedCards": {
+          "type": "array"
+        },
+        "savedFavorites": {
+          "type": "array"
+        }
+      },
+      "required": ["userId"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Individual user document containing profile, onboarding, and display preferences"
+    },
+    "/users/{userId}/commitments/{commitmentId}": {
+      "schema": "WeeklyCommitment",
+      "description": "Recurring weekly schedule commitments"
+    },
+    "/users/{userId}/restPeriods/{restPeriodId}": {
+      "schema": "RestPeriod",
+      "description": "Protected rest blocks"
+    },
+    "/users/{userId}/interests/{interestId}": {
+      "schema": "Interest",
+      "description": "User interests and subjects"
+    },
+    "/users/{userId}/ambitions/{ambitionId}": {
+      "schema": "Ambition",
+      "description": "Aspirations and ambitions"
+    },
+    "/users/{userId}/goals/{goalId}": {
+      "schema": "Goal",
+      "description": "User actionable goals"
+    },
+    "/users/{userId}/settings/{settingId}": {
+      "schema": "MotivationPreference",
+      "description": "User settings documents such as motivation and notifications"
+    }
+  }
+}
